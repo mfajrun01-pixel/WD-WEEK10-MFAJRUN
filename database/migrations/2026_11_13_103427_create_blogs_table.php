@@ -9,19 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('blogs', function (Blueprint $table) {
-            $table->id();
-            $table->string('number');
-            $table->string('category');
-            $table->string('title');
-            $table->text('description');
-            $table->json('tools');
-            $table->string('symbol');
-            $table->timestamps();
-        });
-    }
+public function up(): void
+{
+    Schema::create('blogs', function (Blueprint $table) {
+        $table->id();
+        $table->unsignedBigInteger('profile_id')->nullable();
+        $table->integer('number')->unique();
+        $table->string('category');
+        $table->string('title');
+        $table->text('description');
+        $table->text('tools')->nullable();
+        $table->string('symbol');
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.

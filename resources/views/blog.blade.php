@@ -20,28 +20,22 @@
                 </div>
 
                 <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                    @foreach ($focusAreas as $area)
+                    @foreach ($blogs as $blog)
                         <article class="group relative flex min-h-72 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-[#111113] p-6 transition duration-300 hover:-translate-y-1 hover:border-amber-200/40 hover:bg-[#151517]">
                             <div class="mb-8 flex items-start justify-between">
-                                <span class="text-xs font-semibold tracking-[0.2em] text-zinc-500">{{ $area['number'] }}</span>
+                                <span class="text-xs font-semibold tracking-[0.2em] text-zinc-500">{{ $blog['number'] }}</span>
                                 <span class="flex h-12 min-w-12 items-center justify-center rounded-xl border border-amber-200/20 bg-amber-200/[0.06] px-2 font-mono text-sm font-semibold text-amber-200 transition group-hover:bg-amber-200/10">
-                                    {{ $area['symbol'] }}
+                                    {{ $blog['symbol'] }}
                                 </span>
                             </div>
 
                             <p class="text-xs font-semibold uppercase tracking-[0.16em] text-amber-200/70">
-                                {{ $area['category'] }}
+                                {{ $blog['category'] }}
                             </p>
-                            <h2 class="mt-2 text-xl font-semibold text-zinc-100">{{ $area['title'] }}</h2>
-                            <p class="mt-3 flex-1 text-sm leading-7 text-zinc-400">{{ $area['description'] }}</p>
+                            <h2 class="mt-2 text-xl font-semibold text-zinc-100">{{ $blog['title'] }}</h2>
+                            <p class="mt-3 flex-1 text-sm leading-7 text-zinc-400">{{ $blog['description'] }}</p>
 
-                            <div class="mt-6 flex flex-wrap gap-2 border-t border-zinc-800 pt-5">
-                                @foreach ($area['tools'] as $tool)
-                                    <span class="rounded-full border border-zinc-800 bg-black/30 px-3 py-1.5 text-xs text-zinc-300">
-                                        {{ $tool }}
-                                    </span>
-                                @endforeach
-                            </div>
+                            <div class="mt-6 flex flex-wrap gap-2 border-t border-zinc-800 pt-5"></div>
                         </article>
                     @endforeach
                 </div>

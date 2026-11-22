@@ -47,7 +47,7 @@
                     <li>
                         <a
                             href="/"
-                            @class([ 'block rounded-lg px-4 py-3 text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200 lg:py-2.5', 'bg-amber-200/[0.08] text-amber-100 lg:bg-white/[0.06]' => request()->is('/'), 'text-zinc-400 hover:bg-white/[0.04] hover:text-zinc-100' => !request()->is('/'), ])>Home</a>
+                            @class([ 'block rounded-lg px-4 py-3 text-sm font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200 lg:py-2.5', 'bg-amber-200/[0.08] text-amber-100 lg:bg-white/[0.06]' => request()->is('/') || request()->is('home'), 'text-zinc-400 hover:bg-white/[0.04] hover:text-zinc-100' => !request()->is('/') && !request()->is('home'), ])>Home</a>
                     </li>
                     <li>
                         <a

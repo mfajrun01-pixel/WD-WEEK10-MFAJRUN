@@ -3,6 +3,7 @@
 @section('title', 'Page Home')
 
 @section('content')
+@foreach ($homes as $home)
         <section class="relative isolate overflow-hidden px-4 py-16 md:px-8 md:py-24">
             <div
                 class="pointer-events-none absolute -right-32 -top-24 -z-10 h-96 w-96 rounded-full bg-amber-200/10 blur-3xl"
@@ -20,8 +21,8 @@
                         Halo, saya
                     </p>
                     <h1 class="text-4xl font-bold leading-tight tracking-tight text-zinc-50 sm:text-5xl lg:text-6xl">
-                        M. Fajrun A.
-                        <span class="mt-1 block text-amber-200">Adillah Bustam</span>
+                        {{ $home['namaprofile'] }} <span class="text-amber-200">.</span>
+                        
                     </h1>
                     <p class="mt-6 max-w-xl text-base leading-8 text-zinc-400 sm:text-lg">
                         Saya membangun pengalaman digital yang fungsional, responsif, dan nyaman digunakan —
@@ -94,4 +95,5 @@
                 </div>
             </div>
         </section>
+    @endforeach
 @endsection

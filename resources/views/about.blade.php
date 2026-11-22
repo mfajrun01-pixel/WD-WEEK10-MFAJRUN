@@ -3,6 +3,7 @@
 @section('title', 'page about')
 
 @section('content')
+@foreach( $abouts as $about)
         <div class="mx-auto max-w-7xl">
             <header class="mx-auto mb-12 max-w-3xl text-center md:mb-16">
                 <span class="inline-flex items-center gap-2 rounded-full border border-amber-200/20 bg-white/[0.03] px-4 py-2 text-sm text-zinc-300">
@@ -17,11 +18,11 @@
                 </p>
             </header>
 
-            <section class="grid items-stretch gap-6 lg:grid-cols-5" aria-label="Profil {{ $nama }}">
+            <section class="grid items-stretch gap-6 lg:grid-cols-5" aria-label="Profil {{ $about['nama'] }}">
                 <div class="relative min-h-[420px] overflow-hidden rounded-2xl border border-zinc-800 bg-[#111113] lg:col-span-2">
                     <img
                         src="{{ asset('img/prof01.png') }}"
-                        alt="Foto profil {{ $nama }}"
+                        alt="Foto profil {{ $about['nama'] }}"
                         class="absolute inset-0 h-full w-full object-cover object-center"
                         loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"></div>
@@ -30,8 +31,8 @@
                             <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
                             Terbuka untuk kolaborasi
                         </span>
-                        <h2 class="mt-4 text-3xl font-bold text-white">{{ $nama }}</h2>
-                        <p class="mt-2 text-sm text-zinc-300">{{ $posisi }} <span class="text-zinc-500">·</span> {{ $umur }} tahun</p>
+                        <h2 class="mt-4 text-3xl font-bold text-white">{{ $about['nama'] }}</h2>
+                        <p class="mt-2 text-sm text-zinc-300">{{ $about['posisi'] }} <span class="text-zinc-500">·</span> {{ $about['umur'] }} tahun</p>
                     </div>
                 </div>
 
@@ -42,7 +43,7 @@
                             Saya suka membangun hal yang berguna lewat teknologi.
                         </h2>
                         <p class="mt-5 text-sm leading-8 text-zinc-400 sm:text-base">
-                            Saya {{ $nama }}, seorang {{ $posisi }} yang tertarik pada pengembangan web.
+                            Saya {{ $about['nama'] }}, seorang {{ $about['posisi'] }} yang tertarik pada pengembangan web.
                             Saya menikmati proses mengubah ide menjadi aplikasi yang mudah digunakan,
                             mulai dari menyusun tampilan hingga mengembangkan fungsionalitasnya.
                         </p>
@@ -97,4 +98,5 @@
                 </a>
             </div>
         </div>
+    @endforeach
 @endsection
